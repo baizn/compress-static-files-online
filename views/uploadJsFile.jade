@@ -1,0 +1,33 @@
+//
+   Created by baizn on 14-10-21.
+
+.wu-example.form-group#uploader
+    h4 请上传ZIP文件
+    .col-sm-5
+        input(type='file',name='uploadFileName',multiple='multiple').form-control#uploadFileName
+    button.btn.btn-default#uploadZipFile 上传
+
+.col-md-12
+    table.table.table-hover
+        thead
+            tr
+                th 序号
+                th 文件名
+                th 操作
+        tbody
+            if(result)
+                -var i = 1;
+                each file,j in result
+                    tr
+                        td= i++
+                        td= file
+                        td
+                            a(zipFilePath= j).btn-link.btn.zipFile 压缩
+            else
+                tr
+                    td(colspan='3',style='text-align:center;color:red;') 没有文件
+script(type='text/javascript').
+    seajs.use(['ZipJsFile'],function(ZipJsFile){
+        var zipJsFile = new ZipJsFile();
+        zipJsFile.init();
+    });

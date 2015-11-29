@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+
+  ul.nav.nav-pills.nav-justified.unzip
+    li.active
+        a(type='jsZip') 单个文件压缩
+    li
+        a(type='jsFileZip') 上传单个文件压缩
+    li
+        a(type='packageZip') zip包压缩
+  #result(style='margin-top:10px;')
+
+  script(type='text/javascript').
+    seajs.use(['Unzip'],function(Unzip){
+        var unzip = new Unzip();
+        unzip.init();
+    });

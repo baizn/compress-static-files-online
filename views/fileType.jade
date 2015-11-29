@@ -1,0 +1,14 @@
+//
+   Created by baizn on 14-10-24.
+
+ul.nav.nav-tabs.fileType
+    li.active
+        a(type='jsFile') JavaScript
+    li
+        a(type='cssFile') CSS
+#fileTypeResult
+script(type='text/javascript').
+    seajs.use(['FileTypeSelect'],function(FileTypeSelect){
+        var fileTypeSelect = new FileTypeSelect();
+        fileTypeSelect.init();
+    });

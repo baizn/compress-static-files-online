@@ -1,0 +1,15 @@
+//
+   Created by baizn on 14-10-24.
+
+br
+.col-md-5
+    textarea(rows='20').form-control#orgCss
+.col-md-2
+    a(style='margin-top:180px;margin-left:60px;').btn.btn-info#inputCssZip 压缩混编CSS
+.col-md-5
+    textarea(rows='20').form-control#finalCss
+script(type='text/javascript').
+   seajs.use(['ZipJsFile'],function(ZipJsFile){
+       var zipJsFile = new ZipJsFile();
+       zipJsFile.init();
+   });
